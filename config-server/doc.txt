@@ -7,4 +7,8 @@ Pasos a realizar.
 
 - Probar que funcione con los endpoints
 
-- Conectar los microservicios a springconfig
+- Conectar los microservicios a springconfig con dos dependencias y crear el bootstrap.properties
+
+- Hasta aquí, es necesario reiniciar los microservicios para adopten las configuraciones al hacer el commit, pero
+podemos hacer que se haga en tiempo real haciendo un refresh. Para ello necesitamos el actuator y anotar un el controller
+de cada microservicio con @RefreshScope
