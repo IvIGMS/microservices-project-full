@@ -1,0 +1,10 @@
+Pasos a realizar.
+
+- Crear los archivos de configuracion y subirlos a un repo
+
+- Crear el microservice de spring-config con sus .properties necesarios para conectarse. Anotar la clase main con
+@EnableConfigServer
+
+- Probar que funcione con los endpoints
+
+- Conectar los microservicios a springconfig
