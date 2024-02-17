@@ -9,6 +9,14 @@ Pasos a realizar.
 
 - Conectar los microservicios a springconfig con dos dependencias y crear el bootstrap.properties
 
-- Hasta aquí, es necesario reiniciar los microservicios para adopten las configuraciones al hacer el commit, pero
-podemos hacer que se haga en tiempo real haciendo un refresh. Para ello necesitamos el actuator y anotar un el controller
-de cada microservicio con @RefreshScope
+Hasta aquí, es necesario reiniciar los microservicios para adopten las configuraciones al hacer el commit, pero
+podemos hacer que se haga en tiempo real haciendo un refresh. Para ello necesitamos:
+
+- El actuator en el .pom
+- Crear esta variable para poder acceder al actuator: management.endpoints.web.exposure.include=*
+-Anotar un el controller de cada microservicio que querramos con @RefreshScope
+- Pasar las varaibles del application.properties al bootstrap.properties (carga antes el bootstrap)
+(para esto vamos a crear un controlador de prueba dentro de product que actualiza una variable)
+- Tambien hay que interactuar con la url de actuator http://localhost:62475/actuator/refresh
+
+(Esto posteriormente puede actualizarse de forma automatica para traer las variables actualizadas)
